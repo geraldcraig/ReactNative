@@ -7,7 +7,7 @@ export default function AddTask() {
   return (
     <>
       <input
-        placeholder="Add task"
+        placeholder="Add message"
         value={text}
         onChange={e => setText(e.target.value)}
       />
