@@ -34,24 +34,28 @@ const SignUpScreen = () => {
       <TextInput
         style={styles.input}
         placeholder="First Name"
+        autoCapitalize="none"
         onChangeText={text => setFirstName(text)}
         value={firstName}
       />
       <TextInput
         style={styles.input}
         placeholder="Last Name"
+        autoCapitalize="none"
         onChangeText={text => setLastName(text)}
         value={lastName}
       />
       <TextInput
         style={styles.input}
         placeholder="Email"
+        autoCapitalize="none"
         onChangeText={text => setEmail(text)}
         value={email}
       />
       <TextInput
         style={styles.input}
         placeholder="Password"
+        autoCapitalize="none"
         onChangeText={text => setPassword(text)}
         value={password}
         secureTextEntry

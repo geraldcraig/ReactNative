@@ -1,13 +1,15 @@
 // import { useState } from 'react';
 import BookList from '../components/BookList'
 import BookForm from '../components/BookForm'
-
 import { useCollection } from "../hooks/useCollection";
+import { useAuthContext } from '../hooks/useAuthContext';
 
 // import { db } from '../firebase/config';
 // import { collection, getDocs } from 'firebase/firestore';
 
 export default function Home() {
+  const { user } = useAuthContext();
+  
   // const [books, setBooks] = useState([
   //   { title: 'the name of the wind', id: 1 },
   //   { title: 'the dragon reborn', id: 2 },
@@ -16,7 +18,10 @@ export default function Home() {
   // ])
 
   // const [books, setBooks] = useState(null);
-    const { documents: books } = useCollection('books')
+    const { documents: books } = useCollection(
+      'books',
+      ['uid', '==', user.uid]
+      )
 
   // useEffect(() => {
   //   const ref = collection(db, 'books');

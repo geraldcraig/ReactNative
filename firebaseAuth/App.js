@@ -50,6 +50,7 @@ export default function App() {
       <Text>Email:</Text>
       <TextInput
         style={styles.input}
+        autoCapitalize='none'
         onChangeText={setEmail}
         value={email}
         placeholder="Enter your email"
@@ -57,6 +58,7 @@ export default function App() {
       <Text>Password:</Text>
       <TextInput
         style={styles.input}
+        autoCapitalize='none'
         onChangeText={setPassword}
         value={password}
         secureTextEntry
