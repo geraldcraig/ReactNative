@@ -1,8 +1,8 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { getDatabase } from "firebase/database";
 import { getAuth } from 'firebase/auth';
 
-  const firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyBUNtgD5EHIaaUeXU6Ggw0BNrw-8NlOcaY",
     authDomain: "reading-list-app-afcb0.firebaseapp.com",
     databaseURL: "https://reading-list-app-afcb0-default-rtdb.europe-west1.firebasedatabase.app",
@@ -12,11 +12,11 @@ import { getAuth } from 'firebase/auth';
     appId: "1:315755398631:web:600f368b26debf7eb0a942"
   };
 
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const db = getFirestore();
+const db = getDatabase(app);
 
-const auth = getAuth();
+const auth = getAuth(app);
 
 export { db, auth }
 
