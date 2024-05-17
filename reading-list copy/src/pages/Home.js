@@ -9,7 +9,7 @@ const useCollection = (c) => {
   const [documents, setDocuments] = useState(null);
 
   useEffect(() => {
-      let ref = collection(db, c);
+      let ref = collection(db, c, 'room1', 'messages');
 
       const unsub = onSnapshot(ref, (snapshot) => {
           let results = []
@@ -28,11 +28,11 @@ const useCollection = (c) => {
 
 export default function Home() {
 
-    const { documents: books } = useCollection('books')
+    const { documents: chats } = useCollection('chats')
 
   return (
     <div>
-      {books && <BookList books={books} />}
+      {chats && <BookList chats={chats} />}
       <BookForm />
     </div>
   );

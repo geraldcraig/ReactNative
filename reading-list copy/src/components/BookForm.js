@@ -10,8 +10,9 @@ export default function BookForm() {
     e.preventDefault()
     console.log(newBook)
 
-    await addDoc(collection(db, 'books'), {
-      title: newBook
+    await addDoc(collection(db, 'chats', 'room1', 'messages'), {
+      message: newBook,
+      timestamp: "timestamp"
     })
 
     setNewBook('')
